@@ -7,9 +7,9 @@ export function NewGaming() {
         <h2>The New Gaming Web</h2>
         <h3>
           At the core of the XBorg Data Graph Protocol lies a dynamic and
-          interconnected network of gaming profiles. Each player's profile is
-          represented as a unique ERC-721 NFT, complete with metadata unique to
-          their gaming journey.
+          interconnected network of gaming profiles. Each player{"'"}s profile
+          is represented as a unique ERC-721 NFT, complete with metadata unique
+          to their gaming journey.
         </h3>
       </hgroup>
       <div className="vn-misc">
