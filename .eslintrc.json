@@ -1,3 +1,15 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": [
+    "react-app",
+    "prettier",
+    "eslint:recommended",
+    "plugin:prettier/recommended",
+    "next/core-web-vitals"
+  ],
+  "ignorePatterns": "**/*.json",
+  "rules": {
+    "@typescript-eslint/ban-ts-comment": "off",
+    "quotes": ["error", "double"],
+    "linebreak-style": "off"
+  }
 }
