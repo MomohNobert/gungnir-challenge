@@ -19,6 +19,11 @@ export function Hero() {
         <p>Scroll down</p>
         <ScrollDownIcon />
       </Style.ScrollDown>
+
+      <figure>
+        <img className="hero-img-1" src="/backgrounds/landing-first.png" />
+        <img className="hero-img-2" src="/backgrounds/landing-second.png" />
+      </figure>
     </Style.Container>
   );
 }
@@ -34,6 +39,27 @@ const Style = {
     margin: auto;
     justify-content: center;
     position: relative;
+
+    figure {
+      position: absolute;
+      width: 100vw;
+      height: 100vh;
+      top: 0;
+      left: -8.75vw;
+      z-index: 0;
+
+      img.hero-img-1 {
+        position: absolute;
+        width: 70vw;
+      }
+
+      img.hero-img-2 {
+        position: absolute;
+        width: 62.5vw;
+        right: 0;
+        top: 5vh;
+      }
+    }
 
     span {
       color: var(--Main---Brand, #eb3a4a);
@@ -55,6 +81,7 @@ const Style = {
       line-height: 64px;
       max-width: 50%;
       margin-bottom: 25px;
+      z-index: 1;
     }
 
     h2 {
@@ -66,6 +93,7 @@ const Style = {
       line-height: 20px;
       max-width: 40%;
       margin-bottom: 45px;
+      z-index: 1;
     }
 
     button {
@@ -79,6 +107,7 @@ const Style = {
       flex-shrink: 0;
       border-radius: 8px;
       background: #eb3a4a;
+      z-index: 1;
     }
   `,
   ScrollDown: styled.div`

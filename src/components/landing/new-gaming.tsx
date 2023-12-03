@@ -1,4 +1,32 @@
+import { backgroundClipAnimation } from "@/styles/animations/backgroundClip";
 import styled from "styled-components";
+
+const accounts = [
+  {
+    name: "MonkeyIslander872",
+    img: "/avatars/monkey.png",
+  },
+  {
+    name: "mean_deal_",
+    img: "/avatars/luffy.png",
+  },
+  {
+    name: "TennisChallenger",
+    img: "/avatars/tennis.png",
+  },
+  {
+    name: "DoozieWoozie",
+    img: "/avatars/doozie.png",
+  },
+  {
+    name: "tired0fbeIngWired",
+    img: "/avatars/tired.png",
+  },
+  {
+    name: "Greendragon_",
+    img: "/avatars/dragon.png",
+  },
+];
 
 export function NewGaming() {
   return (
@@ -12,14 +40,17 @@ export function NewGaming() {
           to their gaming journey.
         </h3>
       </hgroup>
-      <div className="vn-misc">
-        <article></article>
-        <article></article>
-        <article></article>
-        <article></article>
-        <article></article>
-        <article></article>
+      <div className="ng-misc">
+        {accounts.map((acc) => (
+          <article>
+            <img src={acc.img} />
+            <p>{acc.name}</p>
+          </article>
+        ))}
       </div>
+      <figure>
+        <img className="ng-img-1" src="/bubbles.png" />
+      </figure>
     </Style.Container>
   );
 }
@@ -32,30 +63,74 @@ const Style = {
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
-    margin-top: 20vh;
+    position: relative;
 
-    .vn-misc {
+    figure {
+      position: absolute;
+      width: 100vw;
+      height: 100vh;
+      top: 0;
+      left: -8.75vw;
+      z-index: 0;
+      overflow: hidden;
+
+      img.ng-img-1 {
+        position: absolute;
+        width: 95vw;
+        right: -50vw;
+        mix-blend-mode: soft-light;
+        top: 0;
+        transform: rotate(-12deg);
+        z-index: 0;
+      }
+    }
+
+    .ng-misc {
       display: flex;
       align-items: center;
       flex-wrap: wrap;
       width: 50%;
       justify-content: space-between;
       height: 40%;
+      margin-top: 27.5vh;
+      z-index: 1;
 
       article {
         width: 47.5%;
-        height: 30%;
+        height: 80px;
         border-radius: 55px;
         border: 1px solid #343434;
         background: rgba(9, 9, 9, 0.8);
         backdrop-filter: blur(10px);
         margin-bottom: 24px;
+        background-color: #080808;
+        border: 1px solid rgba(52, 52, 52, 0.5);
+        display: flex;
+        align-items: center;
+
+        img {
+          height: 64px;
+          border-radius: 50%;
+          margin: 0 8px;
+        }
+
+        p {
+          font-family: "Lexend";
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 400;
+          ${() => backgroundClipAnimation()}
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
       }
     }
 
     hgroup {
       height: 50%;
       width: 40%;
+      margin-top: 27.5vh;
     }
 
     h2 {
