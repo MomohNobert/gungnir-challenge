@@ -42,14 +42,14 @@ export function NewGaming() {
       </hgroup>
       <div className="ng-misc">
         {accounts.map((acc) => (
-          <article>
-            <img src={acc.img} />
+          <article key={acc.name}>
+            <img src={acc.img} alt={acc.name} />
             <p>{acc.name}</p>
           </article>
         ))}
       </div>
       <figure>
-        <img className="ng-img-1" src="/bubbles.png" />
+        <img className="ng-img-1" src="/bubbles.png" alt="bubbles" />
       </figure>
     </Style.Container>
   );
